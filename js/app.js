@@ -96,10 +96,17 @@ const cargarEgresos = () => {
             <div class="elemento_porcentaje">${formatoPorcentaje(egreso.valor/totalEgresos())}</div>
             <div class="elemento_eliminar">
                 <button class = 'elemento_eliminar--btn'>
-                    <ion-icon name="trash"></ion-icon>
+                    <ion-icon name="trash" onclick = 'eliminarEgreso(${egreso.id})'></ion-icon>
                 </button>    
             </div>
         </div>
     `;
     return egresoHTML;
+}
+
+const eliminarEgreso = (id) => {
+    let indiceEliminar = egresos.findIndex(egreso => {egreso.id === id});
+    egresos.splice(indiceEliminar, 1);
+    cargarCabecero();
+    cargarEgresos();
 }
