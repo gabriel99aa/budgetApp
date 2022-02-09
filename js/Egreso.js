@@ -7,5 +7,7 @@ class Egresos extends Dato{
         this._id = ++Egresos.contadorEgresos;
     }
 
-    get id() { return this._id; }
+    get id() { 
+        return this._id; 
+    }
 }

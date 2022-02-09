@@ -47,7 +47,7 @@ body {
 }
 
 .presupuesto_titulo{
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
     margin-bottom: 10px;
     font-weight: 300;
@@ -103,6 +103,7 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
     text-align: center;
     border-radius: 3px;
+    width : 60px;
 }
 
 
@@ -197,6 +198,11 @@ h2 {
 .elemento {
     padding: 13px;
     border-bottom: 1px solid #e7e7e7;
+    width: 400px;
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr 1fr;
+    grid-template-areas: "descripcion   valor   porcentaje  boton";
+
 }
 
 .elemento:first-child { border-top: 1px solid #e7e7e7; }
@@ -219,7 +225,7 @@ h2 {
     background-color: #FFDAD9;
     padding: 3px;
     border-radius: 3px;
-    width: 45px;
+    width: 60px;
     text-align: center;
 }
 
