@@ -19,7 +19,10 @@ body {
     font-weight: 400;
 }
 
-.derecha { float: right; }
+.derecha { 
+    float: right; 
+
+}
 .rojo { color: #FF5049 !important; }
 .rojofocus:focus { border: 1px solid #FF5049 !important; }
 
@@ -170,19 +173,23 @@ body {
 .agregar_btn:focus { outline: none; }
 
 .contenedor {
-    width: 860px;
-    margin: 60px auto;
+    max-width: 1200px;
+    margin: 50px 50px 50px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    padding: 10px;
 }
 
 .ingreso {
-    float: left;
-    width: 370px;
-    margin-right: 70px;
+    float: center;
+    width: 500px;
+    
 }
 
 .egreso {
-    float: left;
-    width: 370px;
+    float: center;
+    width: 500px;
 }
 
 h2 {
@@ -198,9 +205,10 @@ h2 {
 .elemento {
     padding: 13px;
     border-bottom: 1px solid #e7e7e7;
-    width: 400px;
+    width: 500px;
     display: grid;
-    grid-template-columns: 3fr 2fr 1fr 1fr;
+    grid-gap : 10px;
+    grid-template-columns: auto auto auto auto;
     grid-template-areas: "descripcion   valor   porcentaje  boton";
 
 }
@@ -209,17 +217,27 @@ h2 {
 .elemento:nth-child(even) { background-color: #f7f7f7; }
 
 .elemento_descripcion {
-    float: left;
+    width: 200px;
+    text-align: left;
+    margin-right: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+    
 }
 
 .elemento_valor {
-    float: left;
+    
     transition: transform 0.3s;
+    text-align: center;
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .elemento_porcentaje {
-    float: left;
-    margin-left: 20px;
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
     transition: transform 0.3s;
     font-size: 11px;
     background-color: #FFDAD9;
@@ -227,6 +245,7 @@ h2 {
     border-radius: 3px;
     width: 60px;
     text-align: center;
+    
 }
 
 .ingreso .elemento_valor,
@@ -242,7 +261,10 @@ h2 {
 
 
 .elemento_eliminar {
-    float: left;
+    float: center;
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .elemento_eliminar--btn {
@@ -254,6 +276,7 @@ h2 {
     vertical-align: middle;
     line-height: 1;
     display: none;
+
 }
 
 .elemento_eliminar--btn:focus { outline: none; }

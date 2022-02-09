@@ -57,17 +57,17 @@ const cargarIngresos = () => {
 
 const crearIngresoHTML = (ingreso) => {
     let ingresoHTML = `
-    <div class="elemento limpiarEstilos">
-        <div class="elemento_descripcion">${ingreso.descripcion}</div>
-        <div class="derecha limpiarEstilos">
-            <div class="elemento_valor">+ ${formatoMoneda(ingreso.valor)}</div>
-            <div class="elemento_eliminar">
-                <button class = 'elemento_eliminar--btn'>
-                    <ion-icon name="trash"></ion-icon>
-                </button>
+        
+            <div class="elemento limpiarEstilos">
+                <div class="elemento_descripcion">${ingreso.descripcion}</div>
+                <div class="elemento_valor">+${ingreso.valor}</div>
+                <div class="elemento_eliminar">
+                    <button class = 'elemento_eliminar--btn'>
+                        <ion-icon name="trash"></ion-icon>
+                    </button>
+                </div>
             </div>
-        </div>
-    </div>
+        
     `;
     return ingresoHTML;
 }
@@ -80,20 +80,18 @@ const cargarEgresos = () => {
     document.getElementById('lista-egresos').innerHTML = egresosHTML;
 }
 
-// const crearEgresoHTML = (egreso) => {
-//     let egresoHTML = `
-//     <div class="elemento limpiarEstilos">
-//         <div class="elemento_descripcion">${egreso.descripcion}</div>
-//         <div class="derecha limpiarEstilos">
-//             <div class="elemento_valor">- ${formatoMoneda(egreso.valor)}</div>
-//             <div class="elemento_porcentaje">${formatoPorcentaje(egreso.valor/totalEgresos())}</div>
-//             <div class="elemento_eliminar">
-//                 <button class = 'elemento_eliminar--btn'>
-//                     <ion-icon name="trash"></ion-icon>
-//                 </button>
-//             </div>
-//         </div>
-//     </div>
-//     `;
-//     return egresoHTML;
-// }
+ const crearEgresoHTML = (egreso) => {
+    let egresoHTML = `
+        <div class="elemento limpiarEstilos">
+            <div class="elemento_descripcion">${egreso.descripcion}</div>
+            <div class="elemento_valor">-${formatoMoneda(egreso.valor)}</div>
+            <div class="elemento_porcentaje">${formatoPorcentaje(egreso.valor/totalEgresos())}</div>
+            <div class="elemento_eliminar">
+                <button class = 'elemento_eliminar--btn'>
+                    <ion-icon name="trash"></ion-icon>
+                </button>    
+            </div>
+        </div>
+    `;
+    return egresoHTML;
+}
