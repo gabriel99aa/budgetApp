@@ -64,13 +64,20 @@ const crearIngresoHTML = (ingreso) => {
                 <div class="elemento_porcentaje">${formatoPorcentaje(ingreso.valor/totalIngresos())}</div>
                 <div class="elemento_eliminar">
                     <button class = 'elemento_eliminar--btn'>
-                        <ion-icon name="trash"></ion-icon>
+                        <ion-icon name="trash" onclick = 'eliminarIngreso(${ingreso.id})'></ion-icon>
                     </button>
                 </div>
             </div>
         
     `;
     return ingresoHTML;
+}
+
+const eliminarIngreso = (id) => {
+    let indiceEliminar = ingresos.findIndex( ingreso => {ingreso.id === id});
+    ingresos.splice(indiceEliminar, 1);
+    cargarCabecero();
+    cargarIngresos();
 }
 
 const cargarEgresos = () => {
