@@ -102,6 +102,7 @@ body {
     margin-left: 10px;
 }
 
+.presupuesto_ingreso--porcentaje,
 .presupuesto_egreso--porcentaje {
     background-color: rgba(255, 255, 255, 0.2);
     text-align: center;
@@ -174,7 +175,7 @@ body {
 
 .contenedor {
     max-width: 1200px;
-    margin: 50px 50px 50px 50px;
+    margin: 50px auto 50px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
@@ -182,13 +183,13 @@ body {
 }
 
 .ingreso {
-    float: center;
+    margin: auto auto auto auto;
     width: 500px;
     
 }
 
 .egreso {
-    float: center;
+    margin: auto auto auto auto;
     width: 500px;
 }
 
@@ -207,7 +208,6 @@ h2 {
     border-bottom: 1px solid #e7e7e7;
     width: 500px;
     display: grid;
-    grid-gap : 10px;
     grid-template-columns: auto auto auto auto;
     grid-template-areas: "descripcion   valor   porcentaje  boton";
 
@@ -240,7 +240,7 @@ h2 {
     margin-bottom: auto;
     transition: transform 0.3s;
     font-size: 11px;
-    background-color: #FFDAD9;
+    
     padding: 3px;
     border-radius: 3px;
     width: 60px;
@@ -251,14 +251,22 @@ h2 {
 .ingreso .elemento_valor,
 .ingreso .elemento_eliminar--btn {
     color: #28B9B5;
+    
 }
 
 .egreso .elemento_valor,
-.egreso .elemento_porcentaje,
 .egreso .elemento_eliminar--btn {
     color: #FF5049;
+    
 }
 
+.ingreso .elemento_porcentaje { 
+    background-color: #28b9b452;
+}
+
+.egreso .elemento_porcentaje{
+    background-color: #ff4f4952;
+}
 
 .elemento_eliminar {
     float: center;

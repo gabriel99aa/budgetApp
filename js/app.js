@@ -60,7 +60,8 @@ const crearIngresoHTML = (ingreso) => {
         
             <div class="elemento limpiarEstilos">
                 <div class="elemento_descripcion">${ingreso.descripcion}</div>
-                <div class="elemento_valor">+${ingreso.valor}</div>
+                <div class="elemento_valor">+${formatoMoneda(ingreso.valor)}</div>
+                <div class="elemento_porcentaje">${formatoPorcentaje(ingreso.valor/totalIngresos())}</div>
                 <div class="elemento_eliminar">
                     <button class = 'elemento_eliminar--btn'>
                         <ion-icon name="trash"></ion-icon>
