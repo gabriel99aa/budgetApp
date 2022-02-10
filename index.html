@@ -12,7 +12,7 @@
     <div class="cabecero">
         <div class="presupuesto">
             <div class="presupuesto_titulo">
-                Finanzas
+                Saldo Disponible
             </div>
             <div class="presupuesto_valor" id = "presupuesto">+ 2000000</div>
             <!-- ingresos -->
@@ -33,6 +33,22 @@
             </div>
         </div>
     </div>
+
+    <form id = 'forma' onsubmit="return false;">
+        <div class="agregar">
+            <div class="agregar_contenedor">
+                <select class = 'agregar_tipo' id = 'tipo'>
+                    <option value = 'ingreso' selected>Ingreso</option>
+                    <option value = 'egreso'>Egreso</option>
+                </select>
+                <input type = 'text' class = 'agregar_descripcion' placeholder="Agregar descripción breve" id = 'descripcion'/>
+                <input type = 'number' class = 'agregar_valor' placeholder = 'Valor' id = 'valor' step = 'any'/>
+                <button class = 'agregar_btn' onclick = 'agregarDato()'>
+                    <ion-icon name="download"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </form>
 
     <div class="contenedor limpiarEstilos">
         <!--Tabla Ingresos-->

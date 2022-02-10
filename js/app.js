@@ -74,7 +74,7 @@ const crearIngresoHTML = (ingreso) => {
 }
 
 const eliminarIngreso = (id) => {
-    let indiceEliminar = ingresos.findIndex( ingreso => {ingreso.id === id});
+    let indiceEliminar = ingresos.findIndex( ingreso => ingreso.id === id);
     ingresos.splice(indiceEliminar, 1);
     cargarCabecero();
     cargarIngresos();
@@ -105,8 +105,31 @@ const cargarEgresos = () => {
 }
 
 const eliminarEgreso = (id) => {
-    let indiceEliminar = egresos.findIndex(egreso => {egreso.id === id});
+    let indiceEliminar = egresos.findIndex(egreso => egreso.id === id);
     egresos.splice(indiceEliminar, 1);
     cargarCabecero();
     cargarEgresos();
+}
+
+let agregarDato = () => {
+    let forma = document.forms['forma'];
+    let tipo = forma['tipo'];
+    let descripcion = forma['descripcion'];
+    let valor = forma['valor'];
+
+    if (descripcion.value !== '' && valor.value !== ''){
+        if (tipo.value === 'ingreso'){
+        // El (más) en: +valor.value es una sintaxis resumida en javaScript que remplaza el metodo Number(), 
+        // es decir que si la variable valor.value es un String, entonces lo combierte en un Number y si ya es un Number, no altera nada.
+        ingresos.push(  new Ingresos(descripcion.value, +valor.value));
+        cargarCabecero();
+        cargarIngresos();
+        }
+
+        else if (tipo.value === 'egreso'){
+            egresos.push(new Egresos(descripcion.value, +valor.value));
+            cargarCabecero();
+            cargarEgresos();
+        }
+    }
 }

@@ -123,10 +123,11 @@ body {
 }
 
 .agregar_tipo {
-    width: 55px;
-    border: 1px solid #e7e7e7;
-    height: 44px;
-    font-size: 18px;
+    width: 100px;
+    border: 2px solid #e7e7e7;
+    height: 40px;
+    font-family: Bahnschrift;
+    font-size: 15px;
     color: inherit;
     background-color: #fff;
     margin-right: 10px;
